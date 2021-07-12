@@ -17,18 +17,20 @@ for (const link of links) {
   })
 }
 
-const header = document.querySelector("header")
-const navHeight = header.offsetHeight
 
-window.addEventListener('scroll', function () {
-  if (window.sccrolly >= navHeight) {
+function changeHeaderWhenScroll() {
+  const header = document.querySelector("header")
+  const navHeight = header.offsetHeight
+
+  if (window.scrolly >= navHeight) {
     // scrool é maior ou iguala alturado header
     header.classList.add("scrool")
   } else {
     // menor que a altura do header
     header.classList.remove("scrool")
   }
-})
+}
+
 
 /* CARROUSEL SLIDER */
 
@@ -56,5 +58,27 @@ scrollReveal.reveal(
   #services header, #services .card,
   #testimonials header, #testimonials .testimonials
   #contact .text, #contact .links
+  footer .brand, footer .social
   `,
 { interval: 100 })
+
+/* Botao voltar para o topo */
+
+
+
+  function backToTop() {
+    const backToTopButton = document.querySelector('.back-to-top')
+
+      if (window.scrollY >= 560) {
+        backToTopButton.classList.add('show')
+      } else {
+        backToTopButton.classList.remove('show')
+  }
+}
+
+/* When Scroll */
+window.addEventListener('scroll', function() {
+  changeHeaderWhenScroll()
+  backToTop()
+})
+  
