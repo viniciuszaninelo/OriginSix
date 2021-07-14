@@ -172,10 +172,10 @@ nav ul li a {
   position: relative;
 }
 
-nav ul li a:hover,
+nav ul li a:hover, 
 nav ul li a.active {
   color: var(--base-color);
-}
+} 
 
 nav ul li a::after {
   content: '';
@@ -485,8 +485,12 @@ footer i {
   color: var(--text-color-light);
 }
 
+footer .social {
+  grid-auto-flow: column;
+  width: fit-content;  /* Encaixa o conteúdo de acordo com a página */
+}
+
 footer .social a {
-  margin-right: 2rem;
   transition: 0.3s;
   display: inline-block;
 }
@@ -520,12 +524,136 @@ footer .social a:hover {
 
 /* Resposive  */
 /* MEDIA QUERIES */
- /* -> extra large devices: 1200    */
+ /* -> extra large devices: 1200+  */
+@media (min-width: 1200px) {
+  
+  .container {
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+  }
+  
+  .section {
+    padding: 10rem 0;
+  }
+
+  .section header,
+  #testimonials header {
+  max-width: 32rem;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  .button {
+  height: 3.125rem;
+  }
+
+  nav .menu {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+  }
+  
+  nav .menu ul {
+  display: flex; /* Fica um ao lado do outro os menus   */
+  gap: 2rem;
+  }
+
+  nav .menu ul li a.title {
+  font: 400 1rem var(--body-font);
+  -webkit-font-smoothing: antialiased;
+  }
+
+  nav .menu ul li a.title.active {
+    font-weight: bold;
+    -webkit-font-smoothing: auto;
+  }
+
+  nav .icon-menu{
+  display: none;
+  }
+
+  main {
+    margin-top: var(--header-height);
+  }
+
+  /* home */
+
+  #home .container {
+  grid-auto-flow: column;
+  justify-content: space-between;
+  margin: 0 auto;
+  }
+
+  #home .image {
+    order: 1;
+  }
+
+  #home .text {
+    order: 0;
+    max-width: 24rem;
+    text-align: left;
+  }
+
+  /* About  */
+  #about .container {
+    margin: 0 auto;
+    grid-auto-flow: column;
+  }
+
+  /* Services */
+
+  .cards {
+    grid-template-columns: 1fr 1fr 1fr; 
+  }
+
+  .card {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  /* TESTIMONIALS */
+
+  #testimonials .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Contact */
+
+  #contact .container {
+    grid-auto-flow: column;
+    align-items: center;
+  }
+
+  #contact .text {
+    max-width:25rem;
+  }
+
+  /* Footer */
+
+  footer.section {
+  padding: 3.75rem 0;
+  }
+
+  footer .container {
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: space-between;  /* Espaço entre os dois elementos */
+  }
+
+  footer .logo {
+    font-size: 2.25rem;
+  }
+}
+
  /* -> large devices: 1023 */
 /* -> large devices: 992 */
 @media(min-width: 992px) {
-  .title {
-    font-size: 2.25rem;
+  :root {
+    --title-font-size: 2.25rem;
+    --subtitle-font-size: 1.125rem;
   }
 }
 
