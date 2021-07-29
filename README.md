@@ -1,5 +1,5 @@
 # OriginSix
-App web desenvolvido durante a NLW Together organizado pela RocketSeat.
+App web desenvolvido durante a NLW Together organizado pela RocketSeat.<br />
 This project aims to review knowledge in HTML, CSS and JS.
 
 The project is summed up in a website about the beauty salon that the client enters, to visit the salon, or to make an appointment.
